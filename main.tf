@@ -1,8 +1,8 @@
-variable "VMCount" {
-    description = "How many VMs do you want to start with (number)? default=1 max=5"
-    type = number
-}
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
 
-output "VMCount" {
-  value = "${var.VMCount > 2 && var.VMCount < 6 ? var.VMCount : 2}"
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 }
