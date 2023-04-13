@@ -5,3 +5,9 @@ resource "aws_s3_bucket" "example" {
     Environment = "Dev"
   }
 }
+
+variable "bucketname" {
+  description = "Bucket's name"
+  type =string
+  default = "aditya"
+}
