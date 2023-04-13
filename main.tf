@@ -1,8 +1,5 @@
-variable "location" {
-  type = string
-}
 resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
+  bucket = var.bucketname
 
   tags = {
     Name        = "My bucket"
