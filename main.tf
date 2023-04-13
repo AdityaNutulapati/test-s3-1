@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "example" {
-  bucket = "${var.bucketname}"
+  bucket = "afd"
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
