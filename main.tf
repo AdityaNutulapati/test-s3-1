@@ -1,13 +1,13 @@
-resource "aws_s3_bucket" "example" {
-  bucket = "afd"
+resource "local_file" "example" {
+  filename="/example.txt"
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
   }
 }
 
-variable "bucketname" {
-  description = "Bucket's name"
-  type =string
-  default = "aditya"
-}
+# variable "bucketname" {
+#   description = "Bucket's name"
+#   type =string
+#   default = "aditya"
+# }
