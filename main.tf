@@ -1,13 +1,6 @@
-# resource "local_file" "example" {
-#   filename="/example.txt"
-#   tags = {
-#     Name        = "My bucket"
-#     Environment = "Dev"
-#   }
-# }
-
-# variable "bucketname" {
-#   description = "Bucket's name"
-#   type =string
-#   default = "aditya"
-# }
+resource "aws_s3_bucket" "test" {
+  bucket=var.bucketnname
+  tags = {
+    Name        = "Test bucket"
+  }
+}
