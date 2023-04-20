@@ -8,14 +8,14 @@ pipeline{
       string description: 'Name of the S3 Bucket', name: 'bucketName'
     }
     stages {
-        stage('Git checkout')
-        {
+//         stage('Git checkout')
+//         {
             
-                steps{
-                    git branch: 'main', credentialsId: '02c515b6-f2d9-433b-914c-a18921a5dad1', url: 'https://github.com/AdityaNutulapati/test-s3-1'
+//                 steps{
+//                     git branch: 'main', credentialsId: '02c515b6-f2d9-433b-914c-a18921a5dad1', url: 'https://github.com/AdityaNutulapati/test-s3-1'
                     
-                }
-        }
+//                 }
+//         }
         // stage('Input Bucket Name')
         // {
         //     steps{
