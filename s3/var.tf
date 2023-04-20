@@ -1,6 +1,9 @@
 variable "bucketname" {
   description = "Bucket's name"
   type =string
-  default = "aditya's bucket"
 }
 
+variable "ticket_number" {
+  description = "OPS Ticket Number"
+  type=string
+}
