@@ -45,7 +45,7 @@ pipeline{
                     accessKeyVariable:'AWS_ACCESS_KEY_ID',
                     secretKeyVariable:'AWS_SECRET_ACCESS_KEY']])
                     {
-                        sh "terraform plan -var 'bucketname=${bucketName}'"
+                        sh "terraform -chdir=s3 plan -var 'bucketname=${bucketName}'"
                     }
             }
         }
@@ -60,7 +60,7 @@ pipeline{
                     accessKeyVariable:'AWS_ACCESS_KEY_ID',
                     secretKeyVariable:'AWS_SECRET_ACCESS_KEY']])
                     {
-                        sh "terraform apply -var 'bucketname=$bucketName' --auto-approve"
+                        sh "terraform -chdir=s3 apply -var 'bucketname=$bucketName' --auto-approve"
                     }
             }
         }
