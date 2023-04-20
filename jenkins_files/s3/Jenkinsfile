@@ -6,6 +6,8 @@ pipeline{
     }
     parameters {
       string description: 'Name of the S3 Bucket', name: 'bucketName'
+      string description: 'OPS Ticket Number Eg: OPS-11913', name: 'ticket_number'
+}
     }
     stages {
 //         stage('Git checkout')
@@ -45,7 +47,7 @@ pipeline{
                     accessKeyVariable:'AWS_ACCESS_KEY_ID',
                     secretKeyVariable:'AWS_SECRET_ACCESS_KEY']])
                     {
-                        sh "terraform -chdir=s3 plan -var 'bucketname=${bucketName}'"
+                        sh "terraform -chdir=s3 plan -var 'bucketname=${bucketName}' -var 'ticket_number=${ticket_number}'"
                     }
             }
         }
