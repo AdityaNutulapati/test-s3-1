@@ -39,7 +39,7 @@ pipeline{
                 sh "cd 'QA/S3/'$ticket_number'-'$file_name"
                 sh "ls"
                 sh "pwd"
-                sh "terraform chdir='QA/S3/'$ticket_number'-'$file_name init"
+                sh "terraform -chdir='QA/S3/'$ticket_number'-'$file_name init"
                 // sh "pwd"
                 
             }
