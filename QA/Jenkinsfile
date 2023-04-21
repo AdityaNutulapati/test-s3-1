@@ -7,6 +7,7 @@ pipeline{
     parameters {
       string description: 'Name of the S3 Bucket', name: 'bucketName'
       string description: 'OPS Ticket Number Eg: OPS-11913', name: 'ticket_number'
+      string description: 'Variable file name (without .tfvars extension)', name: 'file_name'
 }
 
     // }
@@ -34,8 +35,8 @@ pipeline{
         stage('Terraform Init')
         {
             steps{
-                sh "pwd"
-                sh label:'',script:'terraform -chdir=s3 init'
+                sh "S3/"+$ticket_number+"-"+$filename
+                sh label:'',script:'terraform init'
                 // sh "pwd"
                 
             }
