@@ -1,2 +1,2 @@
 bucketname="newOPS111"
-ticket_number="OPS-1111"
+ticket_number=$1
