@@ -34,8 +34,9 @@ pipeline{
         stage('Terraform Init')
         {
             steps{
-                sh label:'',script:'terraform -chdir=s3 init'
                 sh "pwd"
+                sh label:'',script:'terraform -chdir=s3 init'
+                // sh "pwd"
                 
             }
         }
