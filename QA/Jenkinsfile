@@ -53,7 +53,7 @@ pipeline{
                     accessKeyVariable:'AWS_ACCESS_KEY_ID',
                     secretKeyVariable:'AWS_SECRET_ACCESS_KEY']])
                     {
-                        sh "terraform -chdir='QA/S3/'$ticket_number'-'$file_name plan -var-file 'QA/S3/Variables'$file_name'.tfvars'"
+                        sh "terraform -chdir='QA/S3/'$ticket_number'-'$file_name plan -var-file 'QA/S3/Variables/'$file_name'.tfvars'"
                     }
             }
         }
