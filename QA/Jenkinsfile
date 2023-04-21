@@ -35,7 +35,7 @@ pipeline{
         stage('Terraform Init')
         {
             steps{
-                sh "S3/"+$ticket_number+"-"+$filename
+                sh "cd 'S3/'+$ticket_number+'-'+$filename"
                 sh label:'',script:'terraform init'
                 // sh "pwd"
                 
