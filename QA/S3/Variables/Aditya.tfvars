@@ -1,2 +1,2 @@
-bucketnname=
-ticket_number=
+bucketnname="newOPS111"
+ticket_number="OPS-1111"
