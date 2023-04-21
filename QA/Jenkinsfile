@@ -53,7 +53,7 @@ pipeline{
                     accessKeyVariable:'AWS_ACCESS_KEY_ID',
                     secretKeyVariable:'AWS_SECRET_ACCESS_KEY']])
                     {
-                        sh "TEST=$(pwd)"
+                        sh "TEST=`pwd`"
                         sh "terraform -chdir='QA/S3/'$ticket_number'-'$file_name plan -var-file $TEST'QA/S3/Variables/'$file_name'.tfvars'"
                     }
             }
