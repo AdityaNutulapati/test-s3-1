@@ -73,7 +73,7 @@ pipeline{
                     {
                         sh "sed -i '' 's/'BUCKET_NAME'/$bucketName/' `pwd`'/QA/S3/Variables/'$file_name'.tfvars'"
                         sh "sed -i '' 's/'TICKET_NUMBER'/$ticket_number/' `pwd`'/QA/S3/Variables/'$file_name'.tfvars'"
-                        sh "terraform -chdir='QA/S3/'$ticket_number'-'$file_name apply -var-file `pwd`'/QA/S3/Variables/'$file_name'.tfvars'"
+                        sh "terraform -chdir='QA/S3/'$ticket_number'-'$file_name apply -var-file `pwd`'/QA/S3/Variables/'$file_name'.tfvars' -auto-approve"
                     }
             }
         }
