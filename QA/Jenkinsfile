@@ -71,7 +71,9 @@ pipeline{
                     accessKeyVariable:'AWS_ACCESS_KEY_ID',
                     secretKeyVariable:'AWS_SECRET_ACCESS_KEY']])
                     {
-                        sh "terraform -chdir=s3 apply -var 'bucketname=$bucketName' -var 'ticket_number=$ticket_number' --auto-approve"
+                        sh "sed -i '' 's/'BUCKET_NAME'/$bucketName/' `pwd`'/QA/S3/Variables/'$file_name'.tfvars'"
+                        sh "sed -i '' 's/'TICKET_NUMBER'/$ticket_number/' `pwd`'/QA/S3/Variables/'$file_name'.tfvars'"
+                        sh "terraform -chdir='QA/S3/'$ticket_number'-'$file_name apply -var-file `pwd`'/QA/S3/Variables/'$file_name'.tfvars'"
                     }
             }
         }
