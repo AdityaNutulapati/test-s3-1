@@ -54,6 +54,7 @@ pipeline{
                     secretKeyVariable:'AWS_SECRET_ACCESS_KEY']])
                     {
                         // sh "TEST=`pwd`"
+                        sh "sed -i 's/'BUCKETNAME'/$bucketName/' $file_name'.tfvars'"
                         sh "terraform -chdir='QA/S3/'$ticket_number'-'$file_name plan -var-file `pwd`'/QA/S3/Variables/'$file_name'.tfvars'"
                     }
             }
